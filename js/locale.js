@@ -327,7 +327,9 @@ var Locale = function(l) {
                 new Array("Healing Light",     "Regenerate"),
                 new Array("Firestrom",         "Fire5+S"),
                 new Array("Laevateinn",        "HP & MP damage"),
-                new Array("Entrust",           "MP damage & pass on stats")                                              
+                new Array("Entrust",           "MP damage & pass on stats"),
+                new Array("Soul Strike",       "HP consuming attack +S"),
+                new Array("Shadow Veil",       "Attribute Evasion")                                                                                                                                        
             ),
             exskills: new Array(
                 "All stats of Fire Guardians increased by 10%.",
@@ -765,7 +767,9 @@ var Locale = function(l) {
                 new Array("Healing Light",     "Regenerate"),
                 new Array("Firestrom",         "Fire5+S"),
                 new Array("Laevateinn",        "HP & MP damage"),                              
-                new Array("Entrust",           "MP damage & pass on stats")                              
+                new Array("Entrust",           "MP damage & pass on stats"),
+                new Array("Soul Strike",       "HP consuming attack +S"),
+                new Array("Shadow Veil",       "Attribute Evasion")                                                                                                                                                                      
             ),
             exskills: new Array(
                 "火属性ガーディアンの全ステータスを10%アップ",

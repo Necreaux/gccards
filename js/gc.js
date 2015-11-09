@@ -737,8 +737,10 @@ var Skill = (function() {
         [126, SKILL_ATTACK, "novameteor",          new Cost(0,    1300), stone_no,  nbuff({}),                Attribute.none, 0], // Nova Meteor (Ignore wisdom)
         [127, SKILL_OTHER, "healinglight",         new Cost(0,    300), stone_no,  nbuff({}),                 Attribute.none, 0], // Healing Light
         [128, SKILL_ATTACK, "fire5s",              new Cost(0,    1500), stone_no,  nbuff({}),                Attribute.fire, 6], // Firestrom (Fire 5+S)             
-        [129, SKILL_ATTACK, "laevateinn",          new Cost(0,    1400), stone_no,  nbuff({}),                Attribute.user, 4], // laevateinn            
-        [130, SKILL_OTHER, "entrust",              new Cost(0,    300), stone_no,  nbuff({}),                 Attribute.none, 0] // Entrust 
+        [129, SKILL_ATTACK, "laevateinn",          new Cost(0,    1400), stone_no,  nbuff({}),                Attribute.none, 4], // laevateinn            
+        [130, SKILL_OTHER, "entrust",              new Cost(0,    300), stone_no,  nbuff({}),                 Attribute.none, 0], // Entrust 
+        [131, SKILL_ATTACK, "soulstrike",          new Cost(1000, 0), stone_no,  nbuff({}),                   Attribute.none, 6], // Soul Strike  
+        [132, SKILL_OTHER, "svd",                  new Cost(0,  300), stone_no,  nbuff({}),                   Attribute.none, 0] // Shadow Veil             
     ];
 
     var skills = {
@@ -2813,6 +2815,15 @@ var Calculator = (function() {
                         var sk = (options.gs_critical || skill == Skill.sgs) ? 1 : -0.5;
                         var dmg = this.getDamage(status1.atk, sk, atk1, 1, status2.def, -1);
                         damage = Math.max(damage, dmg);
+                    } else if (skill == Skill.blastmeteor && status1.mp >= skill.cost.mp) {
+                        /* Attack by Blast Meteor. */
+                        var dmg = this.getDamage(status1.atk, 0.3, atk1, 1, status2.def, -1);
+                        damage = Math.max(damage, dmg);
+                    } else if (skill == Skill.novameteor && status1.mp >= skill.cost.mp) {
+                        /* Attack by Nova Meteor. */
+                        var attr = hasSkill(skills2, Skill.fb) ? 0.85 : (g1.attribute.isCriticalTo(g2.attribute) ? 1.15 : (g1.attribute.isBlockedBy(g2.attribute) ? 0.85 : 1));
+                        var dmg = this.getDamage(status1.wis, 0.3, wis1, attr, status2.wis, -1);
+                        damage = Math.max(damage, dmg);
                     } else if (skill == Skill.cd && status1.mp >= skill.cost.mp) {
                         /* Attack by Crash Drain/Life Leech. */
                         var dmg = this.getDamage(status1.atk, this.skill_mult[skill.level - 1], atk1, 1, status2.def, def2);
@@ -2855,7 +2866,7 @@ var Calculator = (function() {
             damage += qsnj;
 
             /* Toxic Blast */
-            if (options.tb && hasSkill(skills1, Skill.tb) && !hasSkill(skills2, Skill.resistant))
+            if (options.tb && (hasSkill(skills1, Skill.tb) || hasSkill(skills1, Skill.deadlypoison)) && !hasSkill(skills2, Skill.resistant))
                 damage += Math.floor(0.4 * status2.hp);
 
             return damage >= status2.hp;
@@ -2997,7 +3008,7 @@ var Calculator = (function() {
 
             
             /* Toxic Blast */
-            if (options.tb && hasSkill(skills2, Skill.tb) && !hasSkill(skills1, Skill.resistant))
+            if (options.tb && (hasSkill(skills2, Skill.tb) || hasSkill(skills2, Skill.deadlypoison)) && !hasSkill(skills1, Skill.resistant))
                 hp1 = Math.floor(0.6 * hp1);
 
             /* Add the damage by QS/NJ. */

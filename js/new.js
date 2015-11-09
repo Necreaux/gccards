@@ -9,16 +9,44 @@ WhatIsNew.get = function() {
 /*        'For Test Usage': [
             "New Card: " + Card.mklnk(?????) + "."
         ],*/
+/*        '2015/??/??': [
+            "Dark Festivities: " + Card.mklnk(00000) + ", " + Card.mklnk(00000) + ".",
+            "Sweet Deceptions: " + Card.mklnk(00000) + ".",   
+            "49th Skyborne Coliseum Reward: " + Card.mklnk(00000) + "."
+        ], */ 
+/*        '2015/??/??': [
+            "Raging Wind, Roaring Thunder: " + Card.mklnk(00000) + ", " + Card.mklnk(00000) + ".",
+            "Search in Sub-Zero: " + Card.mklnk(00000) + ".",   
+            "48th Skyborne Coliseum Reward: " + Card.mklnk(00000) + "."
+        ],  */
+/*        '2015/??/??': [
+            "The Centaur's Judgement: " + Card.mklnk(00000) + ".",   //Zeno Centaur
+            "Implementing Blast/Nova Meteor" + ".", 
+            "47th Skyborne Coliseum Reward: " + Card.mklnk(00000) + "."
+        ], */
+/*        '2015/??/??': [
+            "The Steel Annihilator: " + Card.mklnk(00000) + ".", //   True Phalanx
+            "Fanged Guardians of the Night: " + Card.mklnk(00000) + ", " + Card.mklnk(00000) + ".", // Ancient Fang & Nefarran          
+            "46th Skyborne Coliseum Reward: " + Card.mklnk(00000) + "."
+        ], */
 /*        '2015/?/??': [
-            "43rd Skyborne Coliseum Reward: " + Card.mklnk(00000) + "."
+            "Name of the Cross: " + Card.mklnk(00000) + ".", //  Krusegionn
+            "45th Skyborne Coliseum Reward: " + Card.mklnk(00000) + "."
+        ], */
+/*        '2015/?/??': [
+            "Searing Sun in the Night: " + Card.mklnk(00000) + ".", //  Alsiel
+            "Barbarians in the Night: " + Card.mklnk(00000) + "."   //  Crusher Rhino
+        ], */
+/*        '2015/?/??': [
+            "44th Skyborne Coliseum Reward: " + Card.mklnk(00000) + "."
         ],*/
 /*        '2015/?/??': [
-            "The Black Gatekeeper: " + Card.mklnk(00000) + ".",
-            "Moonlight in the Darkness: " + Card.mklnk(00000) + ", " + Card.mklnk(00000) + ".",
+            "The Black Gatekeeper: " + Card.mklnk(00000) + ".",   // Orcus
+            "Moonlight in the Darkness: " + Card.mklnk(00000) + ", " + Card.mklnk(00000) + ".",  // Luna and Queen Persephone
             "True Cards: " + Card.mklnk(00000) + ", " + Card.mklnk(00000) + ", " + Card.mklnk(00000) + ", " + Card.mklnk(00000) + "."
         ],*/
 /*        '2015/?/??': [
-            "42nd Skyborne Coliseum Reward: " + Card.mklnk(00000) + ".",
+            "43rd Skyborne Coliseum Reward: " + Card.mklnk(00000) + ".",
             "Rite of Descent: " + Card.mklnk(00000) + "." Kagura
         ],*/        
         '2015/9/22': [
